@@ -1,4 +1,4 @@
 import CustomerLayout from '../components/CustomerLayout.jsx'
-const bookings = [['Deep home cleaning', 'Priya Home Care', '16 July 2026 · 10:00 AM', 'Confirmed'], ['Electrical repair', 'FixIt Electricals', '19 July 2026 · 2:30 PM', 'Pending']]
+const bookings = [['Deep home cleaning', 'Priya Home Care', '16 July 2026 Â· 10:00 AM', 'Confirmed'], ['Electrical repair', 'FixIt Electricals', '19 July 2026 Â· 2:30 PM', 'Pending']]
 function Bookings() { return <CustomerLayout title="My Bookings" subtitle="Review and manage your upcoming services."><section className="booking-list customer-booking-list">{bookings.map(([service, provider, time, status]) => <article className="booking-card customer-booking-card" key={service}><div className="booking-icon">{service.startsWith('Deep') ? '??' : '?'}</div><div><strong>{service}</strong><p>{provider}</p><small>{time}</small></div><div><span className={`status status-${status.toLowerCase()}`}>{status}</span><button className="text-button">Manage</button></div></article>)}</section></CustomerLayout> }
 export default Bookings

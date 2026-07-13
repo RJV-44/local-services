@@ -1,4 +1,4 @@
 import ProviderLayout from '../components/ProviderLayout.jsx'
-const services = [['Deep home cleaning', 'From $89 · 3 hours', 'Active'], ['Move-out cleaning', 'From $160 · 5 hours', 'Active'], ['Kitchen deep clean', 'From $55 · 2 hours', 'Draft']]
+const services = [['Deep home cleaning', 'From $89 Â· 3 hours', 'Active'], ['Move-out cleaning', 'From $160 Â· 5 hours', 'Active'], ['Kitchen deep clean', 'From $55 Â· 2 hours', 'Draft']]
 function MyServices() { return <ProviderLayout title="My Services" subtitle="Create and manage the services you offer."><section className="panel"><div className="panel-heading"><div><h2>Service listings</h2><p>{services.length} services in your catalogue.</p></div><button className="primary-button">+ Add service</button></div><div className="service-grid">{services.map(([name, price, status]) => <article className="service-card" key={name}><span className={`status status-${status.toLowerCase()}`}>{status}</span><h3>{name}</h3><p>{price}</p><button className="text-button">Edit service</button></article>)}</div></section></ProviderLayout> }
 export default MyServices

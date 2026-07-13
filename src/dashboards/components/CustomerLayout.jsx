@@ -12,7 +12,7 @@ function CustomerLayout({ title, subtitle, children }) {
       <div className="dashboard-content">
         <header className="dashboard-header"><div><h1>{title}</h1><p>{subtitle}</p></div><button className="notification-button" aria-label="Notifications">??</button></header>
         <main className="dashboard-main">{children}</main>
-        <footer className="dashboard-footer">© 2026 Local Services · Customer Portal</footer>
+        <footer className="dashboard-footer">Â© 2026 Local Services Â· Customer Portal</footer>
       </div>
     </div>
   )

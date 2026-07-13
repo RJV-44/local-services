@@ -1,4 +1,13 @@
 import { useEffect, useState } from 'react'
+import Home from './pages/Home.jsx'
+import Login from './pages/Login.jsx'
+import Register from './pages/Register.jsx'
+import Services from './pages/Services.jsx'
+import ServiceDetails from './pages/ServiceDetails.jsx'
+import Booking from './pages/Booking.jsx'
+import PublicDashboard from './pages/Dashboard.jsx'
+import About from './pages/About.jsx'
+import Contact from './pages/Contact.jsx'
 import AdminDashboard from './dashboards/Admin/Dashboard.jsx'
 import AdminUsers from './dashboards/Admin/Users.jsx'
 import AdminProviders from './dashboards/Admin/Providers.jsx'
@@ -30,6 +39,7 @@ import ProviderNotifications from './dashboards/Provider/Notifications.jsx'
 import ProviderSettings from './dashboards/Provider/Settings.jsx'
 
 const routes = {
+  '#home': Home, '#login': Login, '#register': Register, '#services': Services, '#service-details': ServiceDetails, '#booking': Booking, '#dashboard': PublicDashboard, '#about': About, '#contact': Contact,
   '#admin-dashboard': AdminDashboard, '#admin-users': AdminUsers, '#admin-providers': AdminProviders,
   '#admin-services': AdminServices, '#admin-bookings': AdminBookings, '#admin-payments': AdminPayments,
   '#admin-reviews': AdminReviews, '#admin-reports': AdminReports, '#admin-settings': AdminSettings, '#admin-profile': AdminProfile,
@@ -43,8 +53,8 @@ const routes = {
 }
 
 function App() {
-  const [hash, setHash] = useState(window.location.hash || '#admin-dashboard')
-  useEffect(() => { const updateRoute = () => setHash(window.location.hash || '#admin-dashboard'); window.addEventListener('hashchange', updateRoute); return () => window.removeEventListener('hashchange', updateRoute) }, [])
+  const [hash, setHash] = useState(window.location.hash || '#home')
+  useEffect(() => { const updateRoute = () => setHash(window.location.hash || '#home'); window.addEventListener('hashchange', updateRoute); return () => window.removeEventListener('hashchange', updateRoute) }, [])
   const Page = routes[hash] ?? AdminDashboard
   return <Page />
 }
