@@ -1,0 +1,5 @@
+import AdminLayout from '../components/AdminLayout.jsx'
+import ServiceCard from '../components/ServiceCard.jsx'
+const services = [['Deep home cleaning', 'Cleaning', 'Priya Home Care'], ['Fan installation', 'Electrical', 'FixIt Electricals'], ['AC maintenance', 'Appliance repair', 'Quick AC Service']]
+function Services() { return <AdminLayout title="Services" subtitle="Monitor the services available on your platform."><section className="panel"><div className="panel-heading"><div><h2>Published services</h2><p>Manage listings and their visibility.</p></div><button className="primary-button">+ Add service</button></div><div className="service-grid">{services.map(([name, category, provider]) => <ServiceCard key={name} name={name} category={category} provider={provider} />)}</div></section></AdminLayout> }
+export default Services

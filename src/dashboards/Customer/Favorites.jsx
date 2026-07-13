@@ -1,0 +1,4 @@
+import CustomerLayout from '../components/CustomerLayout.jsx'
+const providers = [['Priya Home Care', 'Home cleaning', '4.9', '??'], ['FixIt Electricals', 'Electrical services', '4.8', '?'], ['Rapid Plumbers', 'Plumbing services', '4.7', '??']]
+function Favorites() { return <CustomerLayout title="Favorites" subtitle="Quickly book the providers you trust."><section className="provider-grid">{providers.map(([name, category, rating, icon]) => <article className="provider-card" key={name}><div className="booking-icon">{icon}</div><button className="favorite-button" aria-label={`Remove ${name} from favorites`}>?</button><h2>{name}</h2><p>{category}</p><p className="stars">? {rating}</p><button className="primary-button">Book again</button></article>)}</section></CustomerLayout> }
+export default Favorites

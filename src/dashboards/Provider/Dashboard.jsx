@@ -1,0 +1,5 @@
+import ProviderLayout from '../components/ProviderLayout.jsx'
+import StatCard from '../components/StatCard.jsx'
+import BookingCard from '../components/BookingCard.jsx'
+function Dashboard() { return <ProviderLayout title="Good morning, Priya" subtitle="Here is an overview of your business today."><section className="stat-grid"><StatCard icon="??" label="New booking requests" value="5" trend="2 since yesterday" /><StatCard icon="?" label="Completed this month" value="28" trend="14% this month" /><StatCard icon="??" label="Earnings this month" value="$2,840" trend="11% this month" /><StatCard icon="?" label="Average rating" value="4.9" trend="from 84 reviews" /></section><section className="panel"><div className="panel-heading"><div><h2>Today's schedule</h2><p>Your next appointments.</p></div><button className="text-button">View calendar</button></div><div className="booking-list"><BookingCard customer="Sophia Patel" service="Deep home cleaning · 10:00 AM" time="42 Garden Street" /><BookingCard customer="Noah Williams" service="Move-out cleaning · 2:00 PM" time="18 Park Avenue" status="Pending" /></div></section></ProviderLayout> }
+export default Dashboard

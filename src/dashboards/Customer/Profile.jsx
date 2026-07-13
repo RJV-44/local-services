@@ -1,0 +1,3 @@
+import CustomerLayout from '../components/CustomerLayout.jsx'
+function Profile() { return <CustomerLayout title="My Profile" subtitle="Keep your contact details up to date."><section className="panel profile-panel"><div className="avatar">SP</div><div><h2>Sophia Patel</h2><p>Customer since March 2025</p></div><hr /><form className="profile-form"><label>Full name<input defaultValue="Sophia Patel" /></label><label>Email address<input type="email" defaultValue="sophia@example.com" /></label><label>Phone number<input defaultValue="+1 555 010 0214" /></label><label>Address<input defaultValue="42 Garden Street, New York" /></label><button className="primary-button" type="button">Save changes</button></form></section></CustomerLayout> }
+export default Profile
