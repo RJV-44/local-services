@@ -1,3 +1,4 @@
+import LogoutButton from '../../components/LogoutButton.jsx'
 const links = ['Dashboard', 'Profile', 'Bookings', 'Booking History', 'Favorites', 'Reviews', 'Notifications', 'Payments', 'Settings']
 
 function CustomerLayout({ title, subtitle, children }) {
@@ -8,9 +9,10 @@ function CustomerLayout({ title, subtitle, children }) {
         <p className="dashboard-role">CUSTOMER PORTAL</p>
         <nav>{links.map((link) => <a key={link} href={`#customer-${link.toLowerCase().replaceAll(' ', '-')}`}>{link}</a>)}</nav>
         <a className="sidebar-profile" href="#customer-profile">?? My account</a>
+        <div className="sidebar-logout"><LogoutButton /></div>
       </aside>
       <div className="dashboard-content">
-        <header className="dashboard-header"><div><h1>{title}</h1><p>{subtitle}</p></div><button className="notification-button" aria-label="Notifications">??</button></header>
+        <header className="dashboard-header"><div><h1>{title}</h1><p>{subtitle}</p></div><div className="dashboard-header-actions"><button className="notification-button" aria-label="Notifications">??</button><LogoutButton /></div></header>
         <main className="dashboard-main">{children}</main>
         <footer className="dashboard-footer">Â© 2026 Local Services Â· Customer Portal</footer>
       </div>

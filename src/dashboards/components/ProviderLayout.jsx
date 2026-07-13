@@ -1,3 +1,4 @@
+import LogoutButton from '../../components/LogoutButton.jsx'
 const links = ['Dashboard', 'Profile', 'My Services', 'Add Service', 'Edit Service', 'Bookings', 'Earnings', 'Reviews', 'Notifications', 'Settings']
 
 function ProviderLayout({ title, subtitle, children }) {
@@ -8,9 +9,10 @@ function ProviderLayout({ title, subtitle, children }) {
         <p className="dashboard-role">PROVIDER PORTAL</p>
         <nav>{links.map((link) => <a key={link} href={`#provider-${link.toLowerCase().replaceAll(' ', '-')}`}>{link}</a>)}</nav>
         <a className="sidebar-profile" href="#provider-profile">?? Provider profile</a>
+        <div className="sidebar-logout"><LogoutButton /></div>
       </aside>
       <div className="dashboard-content">
-        <header className="dashboard-header"><div><h1>{title}</h1><p>{subtitle}</p></div><button className="notification-button" aria-label="Notifications">??</button></header>
+        <header className="dashboard-header"><div><h1>{title}</h1><p>{subtitle}</p></div><div className="dashboard-header-actions"><button className="notification-button" aria-label="Notifications">??</button><LogoutButton /></div></header>
         <main className="dashboard-main">{children}</main>
         <footer className="dashboard-footer">Ã‚Â© 2026 Local Services Ã‚Â· Provider Portal</footer>
       </div>
